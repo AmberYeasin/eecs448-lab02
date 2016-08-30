@@ -9,10 +9,12 @@
 
 //----------------------------------------------------------------------------------------------
 
-/*Methods to add
-1)sizeC1
-2)search - check if empty, otherwise use while loop to adjust pointers to keep going, otherwise return adjusted pointer
-3)remove - check if empty, check if head, else have running node go through list and remove
+/**
+*	Methods to add:
+*	1)sizeC1
+*	2)search - check if empty, otherwise use while loop to adjust pointers to keep going, 
+*	otherwise return adjusted pointer
+*	3)remove - check if empty, check if head, else have running node go through list and remove
 */
 
 
@@ -24,6 +26,25 @@ int LinkedList<T>::size() const
 	return(m_size);
 }
 
+//search
+template <typename T>
+Node<T>* LinkedList<T>:: find(T value) const
+{
+	Node<T>*temp=m_front;
+
+	while(temp!=nullptr)
+	{
+		if(temp->getValue()==value)
+		{
+			return(temp);
+		}
+		else
+		{
+		temp=temp->getNext();
+		}
+	}
+	return(nullptr);
+}
 
 //----------------------------------------------------------------------------------------
 template <typename T>
