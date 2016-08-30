@@ -1,10 +1,31 @@
 /**
 *	@author Amber Yeasin
-*	@date 
+*	@date 2016.09.30
 *	@file LinkedList.hpp
 *	@brief Implementation file for templated LinkedList class
 */
 
+
+
+//----------------------------------------------------------------------------------------------
+
+/*Methods to add
+1)sizeC1
+2)search - check if empty, otherwise use while loop to adjust pointers to keep going, otherwise return adjusted pointer
+3)remove - check if empty, check if head, else have running node go through list and remove
+*/
+
+
+
+//size
+template <typename T>
+int LinkedList<T>::size() const
+{
+	return(m_size);
+}
+
+
+//----------------------------------------------------------------------------------------
 template <typename T>
 LinkedList<T>::LinkedList() : m_front(nullptr), m_size(0)
 {
