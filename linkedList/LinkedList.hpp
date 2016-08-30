@@ -75,6 +75,15 @@ bool LinkedList<T>::remove(T value)
 				temp=nullptr;
 				next=nullptr;
 				return(true);
+			}
+			else//middle or end of list
+			{
+				next=temp->getNext();
+				delete temp;		
+				m_size--;		
+				temp=nullptr;
+				next=nullptr;
+				return(true);
 			}				
 
 		}
