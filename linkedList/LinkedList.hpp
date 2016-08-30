@@ -46,6 +46,45 @@ Node<T>* LinkedList<T>:: find(T value) const
 	return(nullptr);
 }
 
+//remove
+template <typename T>
+bool LinkedList<T>::remove(T value)
+{
+	if(isEmpty())
+	{
+		return(false);
+	}
+	else
+	{	
+		temp=find(value);
+		next=nullptr;
+		if(temp!=nullptr)
+		{
+			if(m_size==0)//only in list, head
+			{				
+				delete temp;
+				m_front=nullptr;
+				return(true);
+			}
+			else if(temp==m_front)//first but not only
+			{
+				next=temp->getNext();					
+				delete temp;	
+				m_front= next;
+				m_size--;		
+				temp=nullptr;
+				next=nullptr;
+				return(true);
+			}				
+
+		}
+		else
+		{
+			return(false);
+		}
+	}
+}
+
 //----------------------------------------------------------------------------------------
 template <typename T>
 LinkedList<T>::LinkedList() : m_front(nullptr), m_size(0)
